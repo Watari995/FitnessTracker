@@ -10,7 +10,11 @@ class WorkoutController extends Controller
 {
     public function index(){
         $workouts = Workout::where('user_id', Auth::id())->get();
-        return view('workouts.index', compact('workouts'));
+        $dates = $workouts->pluck('date');
+        $values = $workouts->pluck('value');
+        
+
+        return view('workouts.index', compact('workouts', 'dates', 'values'));
     }
 
     public function create(){

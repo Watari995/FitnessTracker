@@ -13,6 +13,10 @@ use App\Http\Controllers\WorkoutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test-chart', function () {
+    return view('test-chart');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
